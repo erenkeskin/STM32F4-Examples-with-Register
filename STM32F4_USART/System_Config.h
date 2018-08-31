@@ -1,15 +1,15 @@
 /************************************************************
-*                                                      		*
-* 	HASAN EREN KESKIN                                    	*
-* 	ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT       	*
-* 	herenkeskin@gmail.com                                	*
-* 	http://herenkeskin.com                            		*
-*                                                      		*
-* 	System Configration Library	                        	*
-* 	Versiyon: 0.1											*
+*															*
+*	HASAN EREN KESKIN										*
+*	ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT			*
+*	herenkeskin@gmail.com									*
+*	http://herenkeskin.com									*
+*															*
+*	System Configration Library								*
+*	Versiyon: 0.1 											*
 *															*
 *	V0.1 - 31.08.2018										*
-*                                                      		*
+*															*
 ************************************************************/
 
 #ifndef SYSTEM_CONFIG_H

@@ -1,15 +1,15 @@
 /************************************************************
-*                                                      		*
-* 	HASAN EREN KESKIN                                    	*
-* 	ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT       	*
-* 	herenkeskin@gmail.com                                	*
-* 	http://herenkeskin.com                            		*
-*                                                      		*
-* 	USART Library 			                            	*
-* 	Versiyon: 0.1											*
+*															*
+*	HASAN EREN KESKIN										*
+*	ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT			*
+*	herenkeskin@gmail.com									*
+*	http://herenkeskin.com									*
+*															*
+*	USART Library											*
+*	Versiyon: 0.1 											*
 *															*
 *	V0.1 - 31.08.2018										*
-*                                                      		*
+*															*
 ************************************************************/
  
 #ifndef USART_H

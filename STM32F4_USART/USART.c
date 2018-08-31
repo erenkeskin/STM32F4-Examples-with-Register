@@ -1,24 +1,24 @@
 /************************************************************
-*                                                      		*
-* 	HASAN EREN KESKIN                                    	*
-* 	ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT       	*
-* 	herenkeskin@gmail.com                                	*
-* 	http://herenkeskin.com                            		*
-*                                                      		*
-* 	USART Library Functions	                            	*
-* 	Versiyon: 0.1											*
+*															*
+*	HASAN EREN KESKIN										*
+*	ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT			*
+*	herenkeskin@gmail.com									*
+*	http://herenkeskin.com									*
+*															*
+*	USART Library Functions									*
+*	Versiyon: 0.1 											*
 *															*
 *	V0.1 - 31.08.2018										*
-*                                                      		*
+*															*
 ************************************************************/
 
 #include "USART.h"
 
 void USART1_Init(uint32_t BAUDRATE)
-	{
+{
 
 	/* GPIO port B Clock Enable  */
-	RCC->AHB1ENR 	|= 0x00000002;
+	RCC->AHB1ENR  |= 0x00000002;
 
 	/*
 	GPIOx_AFR[0] = GPIOx_AFRL
@@ -41,23 +41,23 @@ void USART1_Init(uint32_t BAUDRATE)
 
 	/* Set Baudrate */
 	if(BAUDRATE == 2400) {
-	USART1->BRR	= 0x88B8;					//   2400 Bps
+		USART1->BRR	= 0x88B8;				//   2400 Bps
 	} else if(BAUDRATE == 9600)   {
-	USART1->BRR = 0x222D;					//   9600 Bps
+		USART1->BRR = 0x222D;				//   9600 Bps
 	} else if(BAUDRATE == 19200)  {
-	USART1->BRR = 0x1118;					//  19200 Bps
+		USART1->BRR = 0x1118;				//  19200 Bps
 	} else if(BAUDRATE == 38400)  {
-	USART1->BRR = 0x88C;					//  38400 Bps
+		USART1->BRR = 0x88C;				//  38400 Bps
 	} else if(BAUDRATE == 57600)  {
-	USART1->BRR = 0x5B2;					//  57600 Bps
+		USART1->BRR = 0x5B2;				//  57600 Bps
 	} else if(BAUDRATE == 115200) {
-	USART1->BRR = 0x2DA;					// 115200 Bps
+		USART1->BRR = 0x2DA;				// 115200 Bps
 	} else if(BAUDRATE == 230400) {
-	USART1->BRR = 0x16C;					// 230400 Bps
+		USART1->BRR = 0x16C;				// 230400 Bps
 	} else if(BAUDRATE == 460800) {
-	USART1->BRR = 0xB6;						// 460800 Bps
+		USART1->BRR = 0xB6;					// 460800 Bps
 	} else if(BAUDRATE == 921600) {
-	USART1->BRR = 0x5C;						// 921600 Bps
+		USART1->BRR = 0x5C;					// 921600 Bps
 	}
 
 	/* Set Control Register Data */
@@ -91,7 +91,7 @@ void USART1_IRQHandler(void)
 	uint8_t Receive_Characher;
 
 	/* RXNE handler */
-	if (USART1->SR & 0x20)						// USART_SR_RXNE
+	if (USART1->SR & 0x20)					// USART_SR_RXNE
 	{
 		Receive_Characher = (USART1->DR & 0xFF);
 		USART1_WriteChar(Receive_Characher);
