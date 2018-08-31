@@ -1,16 +1,16 @@
-/********************************************************
-*                                                      	*
-* HASAN EREN KESKIN                                    	*
-* ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT       	*
-* herenkeskin@gmail.com                                	*
-* http://herenkeskin.com                            		*
-*                                                      	*
-* USART Library						                            	*
-* Versiyon: 0.1																					*
-*																												*
-*	V0.1 - 31.08.2018																			*
-*                                                      	*
-********************************************************/
+/************************************************************
+*                                                      		*
+* 	HASAN EREN KESKIN                                    	*
+* 	ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT       	*
+* 	herenkeskin@gmail.com                                	*
+* 	http://herenkeskin.com                            		*
+*                                                      		*
+* 	USART Library 			                            	*
+* 	Versiyon: 0.1											*
+*															*
+*	V0.1 - 31.08.2018										*
+*                                                      		*
+************************************************************/
  
 #ifndef USART_H
 #define USART_H
@@ -25,8 +25,8 @@
 	---------------------------
 	
 	Board TX 	-----> FTDI232 RX
-	Board RX  -----> FTDI232 TX
-	Board GND -----> FTDI232 GND
+	Board RX  	-----> FTDI232 TX
+	Board GND 	-----> FTDI232 GND
 	
 	For USART1 Communication:
 		- Used pins are PB6 and PB7
@@ -42,8 +42,8 @@
 	
 #include "System_Config.h"
 
-void 		USART1_Init(uint32_t BAUDRATE);
-void 		USART1_WriteChar(uint8_t character);
-void 		USART1_WriteString(uint8_t * string);
+void 	USART1_Init(uint32_t BAUDRATE);
+void 	USART1_WriteChar(uint8_t character);
+void	USART1_WriteString(uint8_t * string);
 
 #endif	// USART_H
