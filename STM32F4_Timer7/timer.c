@@ -79,7 +79,7 @@ void GPIO_Init(GPIO_TypeDef * GPIOx, uint8_t GPIO_Pin)
 	GPIOx->OTYPER 	&= ~(1 << (1 * GPIO_Pin));		// Output Type = Push-pull
 	GPIOx->PUPDR 		&= ~(3 << (2 * GPIO_Pin));		// Pull-up/down Mode = No pull up/down
 }
-
+ 
 void GPIO_Write(GPIO_TypeDef * GPIOx, uint8_t GPIO_Pin, uint8_t State)
 {
 	if(State == 1)
