@@ -65,9 +65,7 @@ int main(void)
 	GPIO_Init(GPIOD, 12);
 	TIM7_Init();
 	
-	while(1)
-	{
-	}
+	while(1);
 	
 	return 0;
 }
