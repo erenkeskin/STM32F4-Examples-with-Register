@@ -1,32 +1,18 @@
-/************************************************************
-*															*
-*	HASAN EREN KESKIN										*
+/******************************************************
+*																											*
+*	HASAN EREN KESKIN																		*
 *	ELECTRICAL AND ELECTRONICS ENGINEERING STUDENT			*
-*	herenkeskin@gmail.com									*
-*	http://herenkeskin.com									*
-*															*
-*	System Configration Functions							*
-*	Versiyon: 0.1 											*
-*															*
-*	V0.1 - 31.08.2018										*
-*															*
-************************************************************/
+*	herenkeskin@gmail.com																*
+*	http://herenkeskin.com															*
+*																											*
+*	System Configration Functions												*
+*	Versiyon: 0.1 																			*
+*																											*
+*	V0.2 - 09.09.2018																		*
+*																											*
+******************************************************/
 
 #include "System_Config.h"
-
-uint32_t multiplier;
- 
-void Delay_Us(uint32_t microseconds)
-{
-	microseconds = microseconds * CLOCK_DIVIDER - 10;
-	while (microseconds--);
-}
-
-void Delay_Ms(uint32_t milliseconds) 
-{
-	milliseconds = 1000 * (milliseconds * CLOCK_DIVIDER - 10);
-	while (milliseconds--);
-}
 
 void System_Clock_Config(void)
 {	
@@ -59,3 +45,17 @@ void System_Clock_Config(void)
 	while((RCC->CFGR & 0x0F) != 0x0A); 	// Wait PLL On
 
 }
+
+/* SysTick Configrations */
+void SysTick_Init(void)
+{
+	SysTick->CTRL = 0;									// Close SysTick for configrations
+	//SysTick->LOAD = 0x00014821;				// 0.5ms counter
+	//SysTick->LOAD = 0x00029041;				// 1ms counter
+	SysTick->LOAD = 0x000000A8;					// 1us counter
+	SysTick->VAL  = 0;									// SysTick Current Value Register 
+	SysTick->CTRL |= (1 << 2);					// Clock source selection, 1 = AHB Source
+	SysTick->CTRL |= (1 << 1);					// SysTick exception request enable (SysTick Interrupt)
+	SysTick->CTRL |= (1 << 0);					// Counter enable
+}
+
